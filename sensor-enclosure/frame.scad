@@ -1,6 +1,6 @@
 // back
 translate([11,-25,0])
-cube([3,27,73]);
+cube([3,25,73]);
 
 // tray left
 translate([-11,-12,0])
