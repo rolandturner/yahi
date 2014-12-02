@@ -8,17 +8,7 @@ unsigned long lowpulseoccupancy = 0;
 float ratio = 0;
 float concentration = 0;
 
-/*
-UDP udp;
-unsigned int localPort = 8888;
-byte remoteAddress[] = { 175, 41, 138, 242 };
-unsigned int remotePort = 9241;
-*/
-
 void setup() {
-//  udp.begin(localPort);
-//  Serial.begin(9600);
-
   pinMode(pin,INPUT);
   starttime = millis();
 }
@@ -34,14 +24,6 @@ void loop() {
 
     char data[1000];
     sprintf(data, "{ lpo: %lu, r: %f, c: %f }", lowpulseoccupancy, ratio, concentration);
-
-/*
-    udp.beginPacket(remoteAddress, remotePort);
-    udp.write(data);
-    udp.endPacket();
-
-*/
-//    Serial.print(data);
 
     Spark.publish("yahi", data);
 
